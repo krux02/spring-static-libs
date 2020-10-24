@@ -1,0 +1,10 @@
+prefix=/spring-static-libs
+exec_prefix=/spring-static-libs
+libdir=/spring-static-libs/lib
+includedir=/spring-static-libs/include/libpng16
+
+Name: libpng
+Description: Loads and saves PNG files
+Version: 1.6.34
+Libs: -L${libdir} -lpng16 -lz -lm
+Cflags: -I${includedir}
