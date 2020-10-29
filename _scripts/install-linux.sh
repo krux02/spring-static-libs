@@ -30,23 +30,26 @@ apt update -y
 
 #apt install -y gcc-snapshot
 if (( $UBUNTU_MAJORVER > 16 )); then
-  GCC="gcc-10"
-  GPP="g++-10"
+  VER="10"
 else
-  GCC="gcc-9"
-  GPP="g++-9"
+  VER="9"
 fi
 
-apt install -y $GCC $GPP
+apt install -y gcc-$VER g++-$VER
 
 apt -y autoremove
 
-if [ ! -f /usr/bin/gcc ]; then
-  ln -s /usr/bin/$GCC /usr/bin/gcc
-fi
-if [ ! -f /usr/bin/g++ ]; then
-  ln -s /usr/bin/$GPP /usr/bin/g++
-fi
+update-alternatives \
+--install /usr/bin/gcc gcc /usr/bin/gcc-$VER 60 \
+--slave /usr/bin/g++ g++ /usr/bin/g++-$VER \
+--slave /usr/bin/gcov gcov /usr/bin/gcov-$VER \
+--slave /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-$VER \
+--slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-$VER \
+--slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-$VER \
+--slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-$VER
+
+update-alternatives \
+--install /usr/bin/c++ c++ /usr/bin/gcc-$VER 60
 
 sed -i 's/# deb-src/deb-src/g' /etc/apt/sources.list
 apt update
