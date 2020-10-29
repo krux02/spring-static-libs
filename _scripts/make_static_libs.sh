@@ -104,8 +104,17 @@ CFLAGS=$PICFLAGS ./configure --prefix ${WORKDIR}
 ${MAKE}
 ${MAKE} install
 
+# libogg-dev
+APTGETSOURCE libogg-dev
+CFLAGS=$PICFLAGS ./configure --prefix ${WORKDIR} \
+--enable-shared=no \
+--enable-static=yes
+
+$MAKE
+$MAKE install
 
 
+# Finalize()
 cd ${WORKDIR}
 rm -rf ${WORKDIR}/download
 rm -rf ${WORKDIR}/tmp

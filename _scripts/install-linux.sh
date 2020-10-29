@@ -28,7 +28,7 @@ apt remove -y $(apt list --installed | cut -d'/' -f1 | grep -e "g\+\+-[0-9]*$")
 add-apt-repository ppa:ubuntu-toolchain-r/test -y
 apt update -y
 
-apt install -y gcc-snapshot
+#apt install -y gcc-snapshot
 if (( $UBUNTU_MAJORVER > 16 )); then
   GCC="gcc-10"
   GPP="g++-10"
