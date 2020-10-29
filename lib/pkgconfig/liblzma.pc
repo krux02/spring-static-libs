@@ -5,7 +5,7 @@
 # You can do whatever you want with this file.
 #
 
-prefix=/spring-static-libs
+prefix=/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

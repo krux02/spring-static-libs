@@ -22,10 +22,10 @@ cppflags=""
 ccopts=""
 ldopts=""
 
-prefix="/spring-static-libs"
-I_opts="-I/spring-static-libs/include/libpng16"
-L_opts="-L/spring-static-libs/lib"
-R_opts="-Wl,-rpath,/spring-static-libs/lib"
+prefix="/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs"
+I_opts="-I/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs/include/libpng16"
+L_opts="-L/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs/lib"
+R_opts="-Wl,-rpath,/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs/lib"
 libs="-lpng16 -lz -lm"
 
 usage()

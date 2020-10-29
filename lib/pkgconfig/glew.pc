@@ -1,6 +1,6 @@
-prefix=/spring-static-libs
+prefix=/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs
 exec_prefix=${prefix}
-libdir=/spring-static-libs/lib
+libdir=/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs/lib
 includedir=${prefix}/include
 
 Name: glew
