@@ -26,11 +26,8 @@ jobs:
             runs-on: 'ubuntu-16.04'
           }
     steps:
-#      - name: Github Checkout Action to Authenticate the User
-#        uses: actions/checkout@master
-#        with:
-#          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-#          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+      - name: Debug Action
+        uses: hmarr/debug-action@v1.0.0
 
       - name: Apt Update and Installation of Essential Packages
         run: |
@@ -43,7 +40,7 @@ jobs:
         id: clone-master-branch
         run: |
           git clone https://github.com/beyond-all-reason/spring-static-libs.git -b master spring-static-libs-scripts
-          echo "::set-output commit-id=$(git rev-parse --short HEAD)"
+          echo "::set-output  name=commit-id::$(git rev-parse --short HEAD)"
           git clone https://github.com/beyond-all-reason/spring-static-libs.git -b ${{ matrix.config.distro }} spring-static-libs
         shell: bash
 
