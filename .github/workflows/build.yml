@@ -47,8 +47,8 @@ jobs:
           git clone https://github.com/beyond-all-reason/spring-static-libs.git -b ${{ matrix.config.distro }} spring-static-libs
         shell: bash
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+#      - name: Setup tmate session
+#        uses: mxschmitt/action-tmate@v3
 
       - name: Execute install-linux.sh
         run: |
