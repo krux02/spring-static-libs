@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: ${{ matrix.config.os }}
+    name: Ubuntu-${{ matrix.config.distro }}
     runs-on: ${{ matrix.config.runs-on }}
     strategy:
       fail-fast: true
