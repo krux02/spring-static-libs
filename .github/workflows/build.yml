@@ -39,9 +39,9 @@ jobs:
       - name: Clone the master Branch of Repo
         id: clone-master-branch
         run: |
-          git clone https://github.com/beyond-all-reason/spring-static-libs.git -b master spring-static-libs-scripts
+          git clone https://github.com/${GITHUB_REPOSITORY}.git -b master spring-static-libs-scripts
           echo "::set-output  name=commit-id::$(git rev-parse --short HEAD)"
-          git clone https://github.com/beyond-all-reason/spring-static-libs.git -b ${{ matrix.config.distro }} spring-static-libs
+          git clone https://github.com/${GITHUB_REPOSITORY}.git -b ${{ matrix.config.distro }} spring-static-libs
         shell: bash
 
       - name: Execute install-linux.sh
