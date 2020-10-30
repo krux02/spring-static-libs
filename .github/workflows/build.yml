@@ -50,8 +50,9 @@ jobs:
         working-directory: ${{ github.workspace }}/spring-static-libs-scripts
         shell: bash
 
-#      - name: Setup tmate session
-#        uses: mxschmitt/action-tmate@v3
+      - name: Setup tmate session
+        if: matrix.config.distro == '20.04'
+        uses: mxschmitt/action-tmate@v3
 
       - name: Execute make_static_libs.sh
         run: |
