@@ -8,7 +8,7 @@
 dlname='libjpeg.so.9'
 
 # Names of this library.
-library_names='libjpeg.so.9.2.0 libjpeg.so.9 libjpeg.so'
+library_names='libjpeg.so.9.4.0 libjpeg.so.9 libjpeg.so'
 
 # The name of the static archive.
 old_library='libjpeg.a'
@@ -23,8 +23,8 @@ dependency_libs=''
 weak_library_names=''
 
 # Version information for libjpeg.
-current=11
-age=2
+current=13
+age=4
 revision=0
 
 # Is this an already installed library?
