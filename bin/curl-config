@@ -21,7 +21,7 @@
 #
 ###########################################################################
 
-prefix=/spring-static-libs
+prefix=/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs
 exec_prefix=${prefix}
 includedir=${prefix}/include
 cppflag_curl_staticlib=-DCURL_STATICLIB
@@ -172,7 +172,7 @@ while test $# -gt 0; do
 
     --static-libs)
         if test "Xyes" != "Xno" ; then
-          echo ${exec_prefix}/lib/libcurl.a -L/spring-static-libs/lib -lssl -lz -lcrypto -ldl -lpthread
+          echo ${exec_prefix}/lib/libcurl.a -L/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs/lib -lssl -lz -lcrypto -ldl -lpthread
         else
           echo "curl was built with static libraries disabled" >&2
           exit 1
@@ -180,7 +180,7 @@ while test $# -gt 0; do
         ;;
 
     --configure)
-        echo " '--disable-shared' '--disable-manual' '--disable-dict' '--disable-file' '--disable-ftp' '--disable-ftps' '--disable-gopher' '--disable-imap' '--disable-imaps' '--disable-pop3' '--disable-pop3s' '--disable-rtsp' '--disable-smb' '--disable-smbs' '--disable-smtp' '--disable-smtps' '--disable-telnet' '--disable-tftp' '--disable-unix-sockets' '--with-ssl=/spring-static-libs' '--prefix' '/spring-static-libs' 'CFLAGS=-fPIC -DPIC'"
+        echo " '--disable-shared' '--disable-manual' '--disable-dict' '--disable-file' '--disable-ftp' '--disable-ftps' '--disable-gopher' '--disable-imap' '--disable-imaps' '--disable-pop3' '--disable-pop3s' '--disable-rtsp' '--disable-smb' '--disable-smbs' '--disable-smtp' '--disable-smtps' '--disable-telnet' '--disable-tftp' '--disable-unix-sockets' '--with-ssl=/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs' '--prefix' '/home/runner/work/spring-static-libs/spring-static-libs/spring-static-libs' 'CFLAGS=-fcommon -fPIC -DPIC'"
         ;;
 
     *)
