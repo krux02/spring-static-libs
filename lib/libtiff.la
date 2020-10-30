@@ -8,7 +8,7 @@
 dlname='libtiff.so.5'
 
 # Names of this library.
-library_names='libtiff.so.5.2.6 libtiff.so.5 libtiff.so'
+library_names='libtiff.so.5.5.0 libtiff.so.5 libtiff.so'
 
 # The name of the static archive.
 old_library='libtiff.a'
@@ -23,9 +23,9 @@ dependency_libs=' -ljpeg -lz -lm'
 weak_library_names=''
 
 # Version information for libtiff.
-current=7
-age=2
-revision=6
+current=10
+age=5
+revision=0
 
 # Is this an already installed library?
 installed=yes
