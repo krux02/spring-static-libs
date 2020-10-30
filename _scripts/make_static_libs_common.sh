@@ -13,7 +13,7 @@ export LIBDIR=${WORKDIR}/lib
 export MAKE="make -j$(nproc)"
 export CMAKE="cmake"
 export DLDIR=${WORKDIR}/download
-export PICFLAGS="-fPIC -DPIC"
+export MYCFLAGS="-fcommon -fPIC -DPIC"
 
 #export PATH=/home/buildbot/mxe/usr/bin:$PATH
 #export TARGETOS=win32
