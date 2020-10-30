@@ -22,18 +22,29 @@ apt -y install make cmake p7zip-full ninja-build \
 apt-get install -y build-essential software-properties-common
 
 apt remove -y snapd || true
-apt remove -y $(apt list --installed | cut -d'/' -f1 | grep -e "gcc-[0-9]*$")
-apt remove -y $(apt list --installed | cut -d'/' -f1 | grep -e "g\+\+-[0-9]*$")
-
-add-apt-repository ppa:ubuntu-toolchain-r/test -y
-apt update -y
+apt remove -y gcc g++ || true
+apt remove -y $(apt list --installed | cut -d'/' -f1 | grep -e "gcc-[0-9]+$")
+apt remove -y $(apt list --installed | cut -d'/' -f1 | grep -e "g\+\+-[0-9]+*$")
 
 #apt install -y gcc-snapshot
-if (( $UBUNTU_MAJORVER > 16 )); then
+case $UBUNTU_MAJORVER in
+20)
   VER="10"
-else
+  ;;
+18)
+  VER="10"
+  add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  apt update -y
+  ;;
+16)
   VER="9"
-fi
+  add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  apt update -y
+  ;;
+*)
+  exit 1
+  ;;
+esac
 
 apt install -y gcc-$VER g++-$VER
 
